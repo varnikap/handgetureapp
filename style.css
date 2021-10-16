@@ -1,0 +1,11 @@
+body
+{
+color: black;
+background-color: aquamarine;
+}
+#camera,#result
+{
+    border: 2px dashed black;
+    height: 350px;
+    width: 300px;
+}
