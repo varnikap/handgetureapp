@@ -16,4 +16,35 @@ camera = document.getElementById("camera");
 
  console.log('ml5 version', ml5.version);
 
- classifer = ml5.soundClassifier("https://teachablemachine.withgoogle.com/models/KMOcoxo25/model.json",modelLoaded);
+ classifer = ml5.soundClassifier("https://teachablemachine.withgoogle.com/models/yRh2qcVeH/model.json",modelLoaded);
+function modelLoaded()
+{
+    console.log('Model Loaded!');
+}
+ function prediction()
+ {
+     img = document.getElementById('captured_image');
+     classifer.classify(img,gotResult);
+    
+ }
+ function gotResult(error,results)
+ {
+     if(results)
+     {
+        
+         console.log(results);
+     }
+     else
+     {
+        console.log(results);
+        
+     }
+ }
+
+ function speak()
+{
+var synth = window.speechSynthesis;
+gesture_data = "The gesture is " + prediction_1;
+var utterthis = new SpeechSynthesisUtterance(gesture_data);
+synth.speak(utterthis);
+}
